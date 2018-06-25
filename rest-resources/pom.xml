@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2018 Eurotech and/or its affiliates and others
+
+     All rights reserved. This program and the accompanying materials
+     are made available under the terms of the Eclipse Public License v1.0
+     which accompanies this distribution, and is available at
+     http://www.eclipse.org/legal/epl-v10.html
+      
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.kura</groupId>
+    <artifactId>rest-resources</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    
+    <repositories>
+        <repository>
+            <id>eclipe.kura</id>
+            <url>https://repo.eclipse.org/content/repositories/kura-releases/</url>
+        </repository>
+        <repository>
+            <id>kura_addons</id>
+            <name>Kura Addons Maven Repository</name>
+            <url>https://raw.github.com/eurotech/kura_addons/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <modules>
+    	<module>org.eclipse.kura.rest.device.provider</module>
+    	<module>org.eclipse.kura.rest.publisher</module>
+    </modules>
+     
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.6.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <configuration>
+                        <manifestLocation>META-INF</manifestLocation>
+                        <exportScr>true</exportScr>
+                        <scrLocation>${project.basedir}</scrLocation>
+                        <instructions>
+                            <Bundle-Vendor>Eurotech</Bundle-Vendor>
+                        </instructions>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>de.dentrassi.maven</groupId>
+                    <artifactId>osgi-dp</artifactId>
+                    <version>0.3.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

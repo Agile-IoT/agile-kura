@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1528379009376
+Build-Jdk: 1.8.0_151
+Built-By: matteo.maiero
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.kura.rest.device.provider
+Bundle-SymbolicName: org.eclipse.kura.rest.device.provider
+Bundle-Vendor: Eurotech
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Import-Package: com.google.gson;version="[2.7,3)",javax.annotation.secur
+ ity;version="[1.2,2)",javax.ws.rs;version="[2.0,3)",javax.ws.rs.core;ve
+ rsion="[2.0,3)",org.eclipse.kura;version="[1.4,2)",org.eclipse.kura.ass
+ et;version="[1.0,2)",org.eclipse.kura.channel;version="[1.1,2)",org.ecl
+ ipse.kura.driver;version="[1.0,2)",org.eclipse.kura.type;version="[1.1,
+ 2)",org.osgi.framework;version="[1.8,2)",org.slf4j;version="[1.6,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.2.0.201605172007

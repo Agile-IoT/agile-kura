@@ -26,7 +26,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV KURA_VERSION=${KURA_VERSION:-3.1.1}
+ENV KURA_VERSION=${KURA_VERSION:-3.2.0}
 ENV RPI_VERSION=${RPI_VERSION:-raspberry-pi-bplus-nn}
 
 ## Kura installation http://hudson.eclipse.org/kura/job/kura-develop/lastSuccessfulBuild/artifact/kura/distrib/target/kura_3.1.0-SNAPSHOT_raspberry-pi-bplus-nn_installer.deb
@@ -44,6 +44,8 @@ RUN [ -f /lib/${ARCH}-linux-${ARCH_FLOAT_MODE}/libudev.so.0 ] || ln -sf /lib/${A
 COPY node-rest-proxy node-rest-proxy
 COPY start.sh start.sh
 COPY org.eclipse.kura.configuration.remote_${REST_DP_VERSION}.dp /opt/eclipse/kura/kura/packages/org.eclipse.kura.configuration.remote_${REST_DP_VERSION}.dp
+COPY rest-resources/org.eclipse.kura.rest.device.provider/target/org.eclipse.kura.rest.device.provider_${REST_DP_VERSION}.dp /opt/eclipse/kura/kura/packages/org.eclipse.kura.rest.device.provider_${REST_DP_VERSION}.dp
+COPY rest-resources/org.eclipse.kura.rest.publisher/target/org.eclipse.kura.rest.publisher_${REST_DP_VERSION}.dp /opt/eclipse/kura/kura/packages/org.eclipse.kura.rest.publisher_${REST_DP_VERSION}.dp
 COPY dpa.properties /opt/eclipse/kura/kura/dpa.properties
 
 ## Web and telnet

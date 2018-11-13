@@ -62,6 +62,14 @@
                         <scrLocation>${project.basedir}</scrLocation>
                         <instructions>
                             <Bundle-Vendor>Eurotech</Bundle-Vendor>
+                            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                            <Include-Resource>
+                				OSGI-INF=${project.basedir}/OSGI-INF
+            				</Include-Resource>
+                            <Bundle-Version>${project.version}</Bundle-Version>
+                            <Bundle-RequiredExecutionEnvironment>JavaSE-1.8</Bundle-RequiredExecutionEnvironment>
+                            <Bundle-ActivationPolicy>lazy</Bundle-ActivationPolicy>
+                            <Service-Component>OSGI-INF/*.xml</Service-Component>
                         </instructions>
                     </configuration>
                 </plugin>

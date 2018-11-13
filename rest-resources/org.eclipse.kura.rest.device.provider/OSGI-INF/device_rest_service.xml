@@ -9,7 +9,7 @@
      http://www.eclipse.org/legal/epl-v10.html
 
 -->
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.kura.internal.rest.device.DeviceRestService">
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.kura.internal.rest.device.DeviceRestService" enabled="true" immediate="true">
    <implementation class="org.eclipse.kura.internal.rest.device.DeviceRestService"/>
    <reference bind="setAssetService" cardinality="1..1" interface="org.eclipse.kura.asset.AssetService" name="AssetService" policy="static"/>
    <service>

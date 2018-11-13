@@ -22,7 +22,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
-    apt-get install -y nodejs nodejs-legacy --no-install-recommends && \
+    apt-get install -y nodejs nodejs-legacy npm --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
